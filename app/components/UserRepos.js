@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import { github as endpoint } from '../constants';
 
+import UserRepo from './UserRepo';
+
 class UserRepos extends Component {
 
   constructor (props) {
@@ -29,14 +31,7 @@ class UserRepos extends Component {
   getRepo (repo) {
     return (
       <li key={repo.id}>
-        <p>
-          <strong>{repo.name} </strong>
-          <small>
-             - {repo.stargazers_count} stars
-             - {repo.open_issues} open issues
-             - <a href={repo.url} target="_blank">repo</a>
-          </small>
-        </p>
+        <UserRepo repo={repo}/>
       </li>
     );
   }
