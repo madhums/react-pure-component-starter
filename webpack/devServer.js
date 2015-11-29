@@ -13,7 +13,7 @@ const config = require('./webpack.config.dev');
 const app = express();
 const compiler = webpack(config);
 
-const htmlFile = path.join(__dirname, '../index.html');
+const htmlFile = path.join(__dirname, '../app/index.html');
 const port = process.env.PORT || 3000;
 
 /**
@@ -34,6 +34,6 @@ app.get('*', (req, res) => {
 // Listen and serve
 
 app.listen(port, (err) => {
-  if (err) return console.log(err);
+  if (err) return console.error(err);
   console.log('Listening at http://localhost:3000');
 });
