@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 
-'use strict';
-
 const fs = require('fs');
 const meow = require('meow');
 
 const write = fs.writeFileSync;
-const mkdir = fs.mkdirSync;
 const cwd = process.cwd();
 const capitalize = str => str[0].toUpperCase() + str.slice(1);
 
@@ -55,16 +52,9 @@ class ${Name} extends Component {
 export default ${Name};
 `;
 
-const path = `${cwd}/app/components/${Name}`;
+const component = `app/components/${Name}`;
+const path = `${cwd}/${component}.js`;
 
-mkdir(path);
-write(path + '/index.js', template);
-write(path + '/index.css', `
-/* ${Name} styles */
+write(path, template);
 
-.${name} {
-
-}
-`);
-
-console.log(`Created ${path} component`);
+console.log(`Created ${component} component`);
