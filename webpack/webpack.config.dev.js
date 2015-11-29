@@ -2,18 +2,19 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 const extract = ExtractTextPlugin.extract;
-const sourceDir = 'app';
+
+const sourceDir = '../app';
+const sourceDirPath = path.join(__dirname, sourceDir);
 
 module.exports = {
   devtool: 'eval',
   entry: [
     'webpack-hot-middleware/client',
-    `./${sourceDir}/index`
+    `${sourceDirPath}/index`
   ],
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, '../build'),
     filename: 'index.js',
     publicPath: '/static/'
   },
@@ -29,7 +30,7 @@ module.exports = {
       {
         test: /\.js$/,
         loaders: ['babel'],
-        include: path.join(__dirname, sourceDir)
+        include: sourceDirPath
       },
       {
         test: /\.scss$/,

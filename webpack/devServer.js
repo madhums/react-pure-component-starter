@@ -13,7 +13,12 @@ const config = require('./webpack.config.dev');
 const app = express();
 const compiler = webpack(config);
 
+const htmlFile = path.join(__dirname, '../index.html');
 const port = process.env.PORT || 3000;
+
+/**
+ * Middlewares
+ */
 
 app.use(webpackDev(compiler, {
   noInfo: true,
@@ -23,8 +28,10 @@ app.use(webpackDev(compiler, {
 app.use(webpackHot(compiler));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(htmlFile);
 });
+
+// Listen and serve
 
 app.listen(port, (err) => {
   if (err) return console.log(err);
