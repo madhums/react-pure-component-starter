@@ -1,15 +1,17 @@
 {
   "name": "react-transform-boilerplate",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "A new Webpack boilerplate with hot reloading React components, and error handling on module and component level.",
   "scripts": {
     "clean": "rimraf build",
     "build:webpack": "NODE_PATH='app/modules' webpack --config webpack.config.prod.js",
     "build": "NODE_ENV=production npm run clean && npm run build:webpack",
     "start": "node devServer.js",
-    "test": "babel-node ./test/index.js",
     "lint": "eslint app test",
-    "watch": "watch 'clear && npm run lint -s && npm run test -s' app test"
+    "pretest": "npm run lint",
+    "test": "babel-node ./test/index.js",
+    "watch": "watch 'clear && npm run lint -s && npm run test -s' app test",
+    "update": "updtr"
   },
   "repository": {
     "type": "git",
@@ -59,6 +61,7 @@
     "rimraf": "^2.4.3",
     "style-loader": "~0.13.0",
     "tape": "^4.2.1",
+    "updtr": "0.1.3",
     "watch": "^0.16.0",
     "webpack": "^1.9.6",
     "webpack-dev-middleware": "^1.2.0",

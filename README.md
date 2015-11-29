@@ -1,6 +1,9 @@
 # React Pure Component Starter
+[![Circle CI](https://circleci.com/gh/ericelliott/react-pure-component-starter.svg?style=svg)](https://circleci.com/gh/ericelliott/react-pure-component-starter)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![GitHub Stars](https://img.shields.io/github/stars/ericelliott/react-pure-component-starter.svg)
 
-[React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced the ability to use pure functions as components. The react team calls them **functional components**.
+[React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced the ability to use pure functions as components. The react team calls them **functional components** in their announcement. The rest of the world calls them **pure components**.
 
 This repo demonstrates pure components. It's based on the [React Transform Boilerplate](https://github.com/gaearon/react-transform-boilerplate) and features:
 
@@ -137,3 +140,10 @@ It does not need JSDom. It does not need Selenium web driver. It does not need a
 
 > "Simplicity is a feature." ~ Jafar Husain (Netflix, TC39)
 
+Learn JavaScript with Eric Elliott
+==================================
+<a href="https://ericelliottjs.com"><img width="1200" alt="eejs-screenshot" src="https://cloud.githubusercontent.com/assets/364727/8640836/76d86618-28c3-11e5-8b6e-27d9cd72180e.png"></a>
+
+[![Join the chat at https://gitter.im/learn-javascript-courses/javascript-questions](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/learn-javascript-courses/javascript-questions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+An online course series for application developers. Ready to jump in? [Learn more](https://ericelliottjs.com/).
