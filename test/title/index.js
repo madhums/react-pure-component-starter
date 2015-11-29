@@ -3,12 +3,12 @@ import reactDom from 'react-dom/server';
 import test from 'tape';
 import dom from 'cheerio';
 
-import createTitle from '../../source/title';
+// import createTitle from '../../source/title';
 
-const Title = createTitle(React);
+// const Title = createTitle(React);
 const render = reactDom.renderToStaticMarkup;
 
-test('Title', assert => {
+test.skip('Title', assert => {
   const titleText = 'Hello!';
   const props = {
     title: titleText,

@@ -1,11 +1,16 @@
-var path = require('path');
-var webpack = require('webpack');
+
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const extract = ExtractTextPlugin.extract;
+const sourceDir = 'app';
 
 module.exports = {
   devtool: 'eval',
   entry: [
     'webpack-hot-middleware/client',
-    './source/index'
+    `./${sourceDir}/index`
   ],
   output: {
     path: path.join(__dirname, 'build'),
@@ -14,13 +19,22 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('index.css', {
+      allChunks: true
+    })
   ],
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'source')
-    }]
+    loaders: [
+      {
+        test: /\.js$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, sourceDir)
+      },
+      {
+        test: /\.css$/,
+        loader: extract('style-loader', 'css-loader')
+      }
+    ]
   }
 };

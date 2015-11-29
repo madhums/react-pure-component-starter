@@ -4,16 +4,22 @@
   "description": "A new Webpack boilerplate with hot reloading React components, and error handling on module and component level.",
   "scripts": {
     "clean": "rimraf build",
-    "build:webpack": "NODE_PATH='source/modules' webpack --config webpack.config.prod.js",
-    "build": "npm run clean && npm run build:webpack",
+    "build:webpack": "NODE_PATH='app/modules' webpack --config webpack.config.prod.js",
+    "build": "NODE_ENV=production npm run clean && npm run build:webpack",
     "start": "node devServer.js",
     "test": "babel-node ./test/index.js",
-    "lint": "eslint source test",
-    "watch": "watch 'clear && npm run lint -s && npm run test -s' source test"
+    "lint": "eslint app test",
+    "watch": "watch 'clear && npm run lint -s && npm run test -s' app test"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/gaearon/react-transform-boilerplate.git"
+  },
+  "engines": {
+    "node": ">=5.x"
+  },
+  "bin": {
+    "rap": "./bin/rap.js"
   },
   "keywords": [
     "react",
@@ -41,11 +47,17 @@
     "babel-loader": "^5.1.2",
     "babel-plugin-react-transform": "^1.1.1",
     "cheerio": "^0.19.0",
+    "css-loader": "~0.23.0",
     "eslint": "^1.3.1",
     "eslint-plugin-react": "^3.8.0",
     "express": "^4.13.3",
+    "extract-text-webpack-plugin": "~0.9.1",
+    "meow": "~3.6.0",
+    "react-transform-catch-errors": "~1.0.0",
+    "react-transform-hmr": "~1.0.1",
     "redbox-react": "^1.0.1",
     "rimraf": "^2.4.3",
+    "style-loader": "~0.13.0",
     "tape": "^4.2.1",
     "watch": "^0.16.0",
     "webpack": "^1.9.6",
@@ -53,7 +65,9 @@
     "webpack-hot-middleware": "^2.0.0"
   },
   "dependencies": {
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "history": "~1.13.1",
+    "react": "~0.14.3",
+    "react-dom": "~0.14.3",
+    "react-router": "~1.0.0"
   }
 }
