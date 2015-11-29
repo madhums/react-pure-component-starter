@@ -1,8 +1,6 @@
 
 import React, { Component } from 'react';
-import { apis } from '../../constants';
-
-const endpoint = apis.github;
+import { github as endpoint } from '../constants';
 
 class UserRepos extends Component {
 

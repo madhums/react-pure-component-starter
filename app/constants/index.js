@@ -1,8 +1,4 @@
 
-const apis = {
+export default {
   github: 'https://api.github.com/users'
-};
-
-export {
-  apis
 };

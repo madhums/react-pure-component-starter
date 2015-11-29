@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import './index.css';
+import '../assets/css/index.css';
 
 class Footer extends Component {
 

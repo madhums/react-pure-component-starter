@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react';
-import { apis } from '../../constants';
+import { github as endpoint } from '../constants';
 
-const endpoint = apis.github;
 
 class UserProfile extends Component {
 
@@ -36,10 +35,10 @@ class UserProfile extends Component {
     const profile = this.state.profile;
     return (
       <div className="user-profile row">
-        <div className="col-md-2">
+        <div className="col-sm-4 col-md-2">
           <img width="80" src={profile.avatar_url} alt=""/>
         </div>
-        <div className="col-md-10">
+        <div className="col-sm-8 col-md-10">
           Public repos: {profile.public_repos}
           <br/>
           Followers: {profile.followers}

@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import history from '../../lib/history';
+import history from '../lib/history';
 
 class Search extends Component {
 

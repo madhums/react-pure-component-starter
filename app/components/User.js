@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
 
-import UserProfile from '../UserProfile';
-import UserRepos from '../UserRepos';
+import UserProfile from './UserProfile';
+import UserRepos from './UserRepos';
 
 class User extends Component {
   render () {
@@ -10,10 +10,10 @@ class User extends Component {
     return (
       <div className="user row">
         <hr/>
-        <div className="repo col-md-6">
+        <div className="repo col-sm-6">
           <UserRepos username={username}/>
         </div>
-        <div className="profile col-md-6">
+        <div className="profile col-sm-6">
           <UserProfile username={username}/>
         </div>
       </div>
