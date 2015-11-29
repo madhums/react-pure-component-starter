@@ -13,10 +13,8 @@ import Home from './components/Home';
 import User from './components/User';
 
 // Pure function components
-const foo = () => () => <h3>Foo</h3>;
-const bar = () => () => <h3>Bar</h3>;
-const Foo = foo(React);
-const Bar = bar(React);
+const Foo = () => <h3>Foo</h3>;
+const Bar = () => <h3>Bar</h3>;
 
 export default (
   <Router history={history}>
