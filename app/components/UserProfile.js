@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { github as endpoint } from '../constants';
 
-
 class UserProfile extends Component {
 
   constructor (props) {

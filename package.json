@@ -6,7 +6,7 @@
     "clean": "rimraf build",
     "build:webpack": "NODE_PATH='app/modules' webpack --config webpack/webpack.config.prod.js",
     "build": "NODE_ENV=production npm run clean && npm run build:webpack",
-    "start": "node webpack/devServer.js",
+    "start": "NODE_ENV=development node webpack/devServer.js",
     "lint": "eslint app test",
     "pretest": "npm run lint",
     "test": "babel-node ./test/index.js",

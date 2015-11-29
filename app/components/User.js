@@ -5,6 +5,7 @@ import UserProfile from './UserProfile';
 import UserRepos from './UserRepos';
 
 class User extends Component {
+
   render () {
     const { username } = this.props.params;
     return (
