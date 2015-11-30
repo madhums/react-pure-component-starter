@@ -12,9 +12,11 @@ class User extends Component {
       <div className="user row">
         <hr/>
         <div className="repo col-sm-6">
+          <h4>Repos:</h4>
           <UserRepos username={username}/>
         </div>
         <div className="profile col-sm-6">
+          <h4>Profile:</h4>
           <UserProfile username={username}/>
         </div>
       </div>

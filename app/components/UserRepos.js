@@ -39,7 +39,7 @@ class UserRepos extends Component {
   render () {
     const repos = this.state.repos;
     return (
-      <ul className="list-unstyled user-repos row">
+      <ul className="list-unstyled user-repos">
         {repos.map(this.getRepo)}
       </ul>
     );
