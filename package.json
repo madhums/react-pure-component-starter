@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/gaearon/react-transform-boilerplate",
   "devDependencies": {
+    "autoprefixer-loader": "~3.1.0",
     "babel": "5.8.34",
     "babel-core": "5.8.33",
     "babel-eslint": "~4.1.6",

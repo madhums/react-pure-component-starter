@@ -1,23 +1,21 @@
 
-const path = require('path');
+/**
+ * Module dependencies.
+ */
+
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extract = ExtractTextPlugin.extract;
 
-const sourceDir = '../app';
-const sourceDirPath = path.join(__dirname, sourceDir);
+const config = require('./config');
+const loaders = require('./loaders');
 
 module.exports = {
   devtool: 'eval',
   entry: [
     'webpack-hot-middleware/client',
-    `${sourceDirPath}/index`
+    `${config.sourceDirPath}/index`
   ],
-  output: {
-    path: path.join(__dirname, '../build'),
-    filename: 'index.js',
-    publicPath: '/static/'
-  },
+  output: config.output,
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
@@ -26,36 +24,6 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loaders: ['babel'],
-        include: sourceDirPath
-      },
-      {
-        test: /\.scss$/,
-        loader: extract('style-loader', 'css!sass')
-      },
-      {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/octet-stream'
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file'
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=image/svg+xml'
-      }
-    ]
+    loaders: loaders
   }
 };
