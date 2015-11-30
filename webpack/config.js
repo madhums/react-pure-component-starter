@@ -6,6 +6,7 @@
 const path = require('path');
 
 const sourceDir = '../app';
+const buildDir = '../build';
 
 /**
  * All dir names paths
@@ -13,10 +14,11 @@ const sourceDir = '../app';
 
 module.exports = {
   output: {
-    path: path.join(__dirname, '../build'),
+    path: path.join(__dirname, buildDir),
     filename: 'index.js',
     publicPath: '/static/'
   },
   sourceDir,
+  buildDir,
   sourceDirPath: path.join(__dirname, sourceDir),
 };
