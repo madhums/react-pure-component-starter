@@ -1,16 +1,15 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 
-class About extends Component {
+// Pure functional component
 
-  render () {
-    return (
-      <div className="about">
-        <h2>About</h2>
-        <span>Madhu ...</span>
-      </div>
-    );
-  }
-}
+const About = () => {
+  return (
+    <div className="about">
+      <h2>About</h2>
+      <span>Madhu ...</span>
+    </div>
+  );
+};
 
 export default About;
