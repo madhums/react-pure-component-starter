@@ -4,17 +4,15 @@
  */
 
 const webpack = require('webpack');
+const assign = require('object-assign');
+const config = require('./config');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const config = require('./config');
-const loaders = require('./loaders');
-
-module.exports = {
+const prod = {
   devtool: 'source-map',
   entry: [
     `${config.sourceDirPath}/index`
   ],
-  output: config.output,
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
@@ -30,8 +28,7 @@ module.exports = {
     new ExtractTextPlugin('index.css', {
       allChunks: true
     })
-  ],
-  module: {
-    loaders: loaders
-  }
+  ]
 };
+
+module.exports = assign({}, config, prod);
