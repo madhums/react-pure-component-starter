@@ -9,15 +9,15 @@ const capitalize = str => str[0].toUpperCase() + str.slice(1);
 
 const usage = `
     Usage
-      $ zap -c <name>
+      $ rap -c <name>
 
     Options
       -c, --component  Add as component
       -h, --help  Show help
 
     Examples
-      $ zap -c unicorn
-      $ zap -h
+      $ rap -c unicorn
+      $ rap -h
 `;
 
 const cli = meow(usage, {
